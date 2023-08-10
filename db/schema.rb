@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_10_200745) do
     t.bigint "ride_id", null: false
     t.decimal "distance", precision: 5, scale: 2
     t.decimal "duration", precision: 4, scale: 2
+    t.datetime "distance_and_duration_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["driver_id"], name: "index_commutes_on_driver_id"
