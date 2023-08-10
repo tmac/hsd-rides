@@ -79,11 +79,21 @@ GEM
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    google-maps (3.0.7)
+      hashie (~> 4.1, >= 4.1.0)
+      httpclient (~> 2.7, >= 2.7.1)
+      multi_json (>= 1.15)
+      ruby-hmac (~> 0.4.0)
+    hashie (4.1.0)
+    httpclient (2.8.3)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
     irb (1.7.4)
       reline (>= 0.3.6)
+    jbuilder (2.11.5)
+      actionview (>= 5.0.0)
+      activesupport (>= 5.0.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -97,6 +107,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.19.0)
     msgpack (1.7.2)
+    multi_json (1.15.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -164,6 +175,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    ruby-hmac (0.4.0)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -179,6 +191,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  google-maps
+  jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.7)
