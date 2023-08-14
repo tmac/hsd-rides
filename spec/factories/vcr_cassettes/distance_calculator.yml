@@ -1,0 +1,325 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/directions/json?destination=Salem,%20OR&key=AIzaSyA-bLnmcpYFog0hrAvBrk_A9bzCMMzl1uc&language=en&origin=Portland,%20OR
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 3.2.2 (2023-03-30))
+      Accept:
+      - "*/*"
+      Date:
+      - Sun, 13 Aug 2023 00:46:01 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 13 Aug 2023 00:46:01 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      X-Goog-Maps-Metro-Area:
+      - Portland, OR
+      Server:
+      - mafe
+      Content-Length:
+      - '18718'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=107
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "geocoded_waypoints" : [
+              {
+                 "geocoder_status" : "OK",
+                 "place_id" : "ChIJJ3SpfQsLlVQRkYXR9ua5Nhw",
+                 "types" : [ "locality", "political" ]
+              },
+              {
+                 "geocoder_status" : "OK",
+                 "place_id" : "ChIJY5xLvPz-v1QRwlcDj-ApNPk",
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "routes" : [
+              {
+                 "bounds" : {
+                    "northeast" : {
+                       "lat" : 45.51652560000001,
+                       "lng" : -122.6733877
+                    },
+                    "southwest" : {
+                       "lat" : 44.9428043,
+                       "lng" : -123.038819
+                    }
+                 },
+                 "copyrights" : "Map data \u00a92023 Google",
+                 "legs" : [
+                    {
+                       "distance" : {
+                          "text" : "46.1 mi",
+                          "value" : 74185
+                       },
+                       "duration" : {
+                          "text" : "51 mins",
+                          "value" : 3085
+                       },
+                       "end_address" : "Salem, OR, USA",
+                       "end_location" : {
+                          "lat" : 44.9428043,
+                          "lng" : -123.0351435
+                       },
+                       "start_address" : "Portland, OR, USA",
+                       "start_location" : {
+                          "lat" : 45.5152258,
+                          "lng" : -122.6783624
+                       },
+                       "steps" : [
+                          {
+                             "distance" : {
+                                "text" : "0.1 mi",
+                                "value" : 155
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 30
+                             },
+                             "end_location" : {
+                                "lat" : 45.51652560000001,
+                                "lng" : -122.677643
+                             },
+                             "html_instructions" : "Head \u003cb\u003enorth\u003c/b\u003e on \u003cb\u003eSW 4th Ave\u003c/b\u003e toward \u003cb\u003eSW Main St\u003c/b\u003e",
+                             "polyline" : {
+                                "points" : "euxtGvrwkV_CeAcCiA"
+                             },
+                             "start_location" : {
+                                "lat" : 45.5152258,
+                                "lng" : -122.6783624
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "0.2 mi",
+                                "value" : 328
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 81
+                             },
+                             "end_location" : {
+                                "lat" : 45.5154899,
+                                "lng" : -122.6736998
+                             },
+                             "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e at the 2nd cross street onto \u003cb\u003eSW Salmon St\u003c/b\u003e",
+                             "maneuver" : "turn-right",
+                             "polyline" : {
+                                "points" : "i}xtGfnwkVv@kEr@cETwAZeBV{AXiB"
+                             },
+                             "start_location" : {
+                                "lat" : 45.51652560000001,
+                                "lng" : -122.677643
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "0.3 mi",
+                                "value" : 477
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 77
+                             },
+                             "end_location" : {
+                                "lat" : 45.5114953,
+                                "lng" : -122.675909
+                             },
+                             "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eS Naito Pkwy\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003ePacific Hwy W\u003c/b\u003e",
+                             "maneuver" : "turn-right",
+                             "polyline" : {
+                                "points" : "yvxtGruvkVVL|Ar@RJxAl@HBHD@@TJ@@HB?@RH`@TPHVLJFJD~BjAdAb@bA^nAf@`@RLJ"
+                             },
+                             "start_location" : {
+                                "lat" : 45.5154899,
+                                "lng" : -122.6736998
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "0.3 mi",
+                                "value" : 560
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 80
+                             },
+                             "end_location" : {
+                                "lat" : 45.506845,
+                                "lng" : -122.6758319
+                             },
+                             "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eS Harbor Dr\u003c/b\u003e",
+                             "maneuver" : "turn-left",
+                             "polyline" : {
+                                "points" : "{}wtGlcwkVH]FYDS?C@CBC@EBC@?@CBABCBAFENCJ?LDHD\\RLFRJZN\\NFD~@^x@^HBB?XJB@B?ZH@@B?XFZDt@?zAG~@KDA`B]DCF@d@M`@M^K"
+                             },
+                             "start_location" : {
+                                "lat" : 45.5114953,
+                                "lng" : -122.675909
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "40.0 mi",
+                                "value" : 64373
+                             },
+                             "duration" : {
+                                "text" : "37 mins",
+                                "value" : 2241
+                             },
+                             "end_location" : {
+                                "lat" : 45.0050636,
+                                "lng" : -122.9969418
+                             },
+                             "html_instructions" : "Merge onto \u003cb\u003eI-5 S\u003c/b\u003e via the ramp on the \u003cb\u003eleft\u003c/b\u003e to \u003cb\u003eTigard\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eSalem\u003c/b\u003e",
+                             "maneuver" : "ramp-left",
+                             "polyline" : {
+                                "points" : "w`wtG|bwkVbA[jA_@bA]ZKn@QLE\\KLE@?DCHCBA@?VKbBg@r@Uj@QVIb@MfBk@RFtAc@PGj@QTGZIXKj@MHEd@QNGFATERE@?PERC@?VCv@GFATARAB?P?TAD?N?T?T?R?@?V?P?@?T@H?^@V?R?T@V?R@T?T?T@T?R?h@@jBB\\@P?N?jA@tKLtADn@Bp@BN@D?H@@?@?D@ZFPBZFZFD?f@Ll@Nl@P`@NXJr@\\VJB@PHJFHBVNJHTLTL\\VVPVPLLRNb@^BB|@z@TVZ\\FHPRPRPVPTNR\\f@RVFJT^TZb@n@T^Zd@X\\JPNNZ`@LLVVTRNLTPb@VTLDBJFPFD@PFDBPDLDVDVDRBL@\\BP?V?T?d@Ah@AZETAJ?`AGHAbAId@CNAZCNA\\Ar@GD?ZAb@Cd@A^A`@?LAL?~@A@?p@?f@?R@T?hAAF?~@?fA?t@?N?F?F?R?b@?X?dA?\\Ad@@j@AT?R?T?l@?B?h@Ah@Aj@A`@AF?NA\\Cb@Cf@EFAb@Gb@Gd@IZGf@KDCVETGVI`@KXId@OD?ZK^K\\Kd@Ml@QRELE`@M^Kb@Mb@Mb@KZG^GTC\\CNAJ?F?D?D@F?F@ZBD?PB\\JPDXNB@`@TLHTRRRRTTXDJT`@Vj@BDJVL^FRFPDTFXJn@Df@@HBj@?H@`@@`@AT?\\AXEx@Ed@C^ANCPCZK`AEf@G`@QhBK|@It@Ej@Ir@?@?DEh@Gn@A^Ej@Cx@Cv@C~A?n@?F@fA@z@@l@B`@@V@ZDl@B^B\\D^BZF`@F^DXH^DPDNHVDNHRPd@HPFJHNHLV^JLFHHJRTVVPPNNNLDDHHNLNLd@b@VVNNNL`@b@VXLP@@FFV\\JNNRNTZh@j@`AHNPXXj@\\l@Vf@JRp@lAXh@n@lANXDJHLLV?@^v@NZXr@FLTj@BHTh@N`@L^HPJZRb@BF?@JX@@L\\L\\JVJXRd@DJVl@LZTf@P^Rd@FJXl@BFFNf@dAj@jAz@dB@DHNBFv@|ADLj@hA^v@b@z@Xn@dBjDJVLT\\r@Zp@@BXj@JTpAjCj@hA\\t@Zn@l@nATf@HPj@lALXRb@FLRb@b@`Ah@hABF\\v@tBvELVXl@P`@Xl@h@jAtA~Cb@~@HPFNVh@pAvCHPb@~@l@rANXTh@Zp@LXRd@JPL\\NXTl@Rf@HVHVL^HXHZH^FZDVHb@F`@Fb@@NDXBZ@H@RDr@@b@@z@@f@Az@A`AAz@CbAA^Ar@Aj@EzAA\\?ZAX?\\Av@?H?~@@X?n@@j@@FBp@@\\B^B`@BXHp@Hp@Lv@DTDXFVDRJd@HVHZBHHXJXJZJZN\\HN@DLXLRJTNVNVNTLRPTNPTXPRNNFFHHRPNLPNPLHFJFLJTLPLTLFDJFTJRLRJRJd@VD@PJTLPHPJVLPJRJRJTLJFB@PHVNPHRLTJRLPJRLTNRNPJRPPLRPNLPPBBJLVVLPPRHJHLf@p@b@t@T`@JTZn@Vn@HTL\\Pf@Ld@JZJ`@Lf@Nr@Jj@Hf@Jr@Jr@ZpCVrBX|BLx@Hf@RdAFXH\\L`@@FPh@LZFNJTHPTf@\\n@HLJPRXRXPR@@Z\\PPVVXV`@Zn@h@FF^Xd@`@hA|@d@`@f@`@f@`@b@\\l@f@PLnA`Ab@Zh@\\d@X^T\\Pd@VXLXN`Bp@h@Rd@Ld@Nv@Pd@FF@\\DD@\\Bb@D\\@\\@r@@pC?n@?N?~EAnJA`BAX?fDA\\?X?hA?fBA|B?H?Z?b@?tCAl@?`E?n@Av@?rA?rCAbDAnCAZ?xA?v@?v@?T?r@?R?^?N?P?|AAN?b@?P?X?^Ab@?^?t@?H?l@?d@AT?V?T?P?d@?j@?j@?t@AH?j@?T?`A?`@?@?`CAtD?`A?bAAj@?n@?`@?d@Ad@?^?l@?dA?x@?V?bAAX?T?|@?rBAPDTAP?~@?P?^?J?fEAj@?`A?lAA`A?f@@T?X?~@Bt@@n@Bt@Bx@Bj@DT@j@B|BPF@|@HXBtALf@Fn@Hp@Jh@FD@l@Jh@HVDj@Jj@J`ARdATTDXFFBLBTFr@PPDp@RPD`AVPFx@T\\L`Bf@ZHx@VpBl@rBl@^Lb@L~@XlBj@b@Lb@NdAXv@Vf@NB@zAb@f@N^Jf@NlBl@^J^JzBp@p@R^LbBf@x@TzAb@D@FBr@RfBf@nBh@b@Lb@Ld@N^JlBh@XHD@NDpDdATFTFlCv@pA^h@N\\JtF~AfAZhBh@zEtAzBp@p@RJDx@TxAb@jCv@p@Rv@Vv@TFBz@V@?h@PfD`Az@VD@z@V~@X|@Xd@L^LRFb@LbAZTFRFPDRHRDh@Pf@Nl@P^LHBr@RTHHBp@R~@XRH`@JRFTHRFtA`@THrA`@RFTFnA^xAd@TF@@~Ad@JDb@LTFRFRFTFVHPFrA`@TFTHTFRFZJJBtA`@RHTFJD^HTHRDVJv@PXHn@RbCr@F@ZJbAZvA`@RHVF|@Xh@Nh@P`D`AZHrA`@h@NTF@@PDj@PRFrA^t@XxBr@`Ct@nA^dCt@NDZHh@PhBh@lCx@h@PTFRFRFVFHDHBVF~@XjA\\FB|Bp@RHTFh@NRFh@PRF`Cr@hBh@f@NlA^rCx@^LRDJBXHRFXHRF^Jt@T|@XrA`@`AXjBh@h@NnErAVHH@pCz@p@Rj@P^LXHFBjA\\`@L~Ad@F@z@VnAZ^J~@RZFp@Nt@PbCb@d@HvBZ`CXnANbBPhAHnBL~@Fj@Bj@@hCDdABvF@fG?D?Z?fA?~@?`A?`B?bCAlC?V?V?|D?fA?b@?z@?jEApV?lN?P?jF?lB?|H?pd@AhC?nNApB?D?~@?`A?j@?t@?Z?X?V?`@?\\?x@?vA?r@?B?jA?nC?@?V?J?Z?R?`@?^?p@?d@AT?x@?jA?jA?T?R?V?\\?p@?d@A~@@l@?hE?|B?V?`@AnB?~@?vB?@?bB?h@?h@?b@@^Ah@?b@@JAL@H?BAZ?l@@NAH?f@@t@AR?\\?d@?F?h@@n@AL?D?@?F?D?L?F?@?H?N@FAD?N?h@?`@?V?T?t@?R?X?Z?T?V?^?\\?^?X?f@?^?d@?`@?X?L@@?dAAxE?l@?|@ApA@j@?vA?XAx@?j@?b@?r@?xA?@?z@?T?T?h@?f@?r@?f@?h@?R?dA?v@?r@?V?T@~@Bj@@R@TBj@DVB`@DXB|@NTDXFNBl@LRFNBJBd@Nd@N`@N`A\\j@Vf@TZN^RVLZR@@h@ZHFXPv@j@d@\\b@ZhBxAj@b@ZVLJ\\T\\Z^VbAv@JHRPXTNLj@b@dAx@^XHDFF\\VLLdAv@XTh@`@h@`@j@d@f@`@~AlA~@r@rAdA^XZTb@^r@j@\\Z`Av@r@j@h@b@ZV\\Vx@p@JHj@b@bFzD|AlA~J|HxAhAbClBdNnKnCvBlEhDtBbBv@l@x@l@zAjAzGjFxJxHTPrCxBjA~@v@l@`HpF`DdCv@l@|FpEvAhA\\XvC|BZT`BnAlDnCzBfBtCzBZTdAz@~BfB~AnAfBtARPVPjA~@l@d@LHp@h@rAbADBfBtAPNvFlE^XzBdB\\XHFjF`EHFpB|ADBXTZV|BfBRN\\XbDfCvAhAPLb@Z`@\\^V~@r@XT|AnA\\T~AnAvBbB~C`CdAz@PL~D~C`GrEbDhChDhCdF~DbCjBdCfB^VfBnAdCbBXPvExCVPv@d@pDzB`@Vl@^hC~A|@j@hBhAdDrB\\TFD~@j@hElCvChBpAx@jBjAbDpB`HjEnOnJtEtCNHnCdBnKvGdAp@`@VLF@@JH^TdTxMbAn@@?dBfAh@\\xGbEPJxBtAPJnCfBlAx@hAt@PLlAz@z@n@p@d@xB~A`CjBRNt@l@TRf@`@XT^ZvBfBVTb@`@b@^fCzB`@^rAnAv@t@b@b@v@v@jAhAp@p@HHZZ`@b@b@b@pDtDNNv@v@fAjAvAxAvAvAn@p@z@z@fAjAPNfAjAnJtJb@b@d@f@xAzAVVRT^\\d@h@n@l@`@`@TV\\\\l@n@RR~DbEFFZ\\\\^l@l@h@h@t@v@p@r@pBrBfBhBlAnAd@d@r@t@b@b@f@f@b@b@r@v@r@r@^^zD~DhGlGh@h@vBzBfFlFNLZ\\~DbE|@~@bBbBpBrBlBnBnEtEz@|@|A|ArDvDzB|BnApALLTVrFtFlCnCn@p@b@d@^\\RTfAhApArAdAdAxAzAdFhFvAxAd@d@NNbMlM|IdJrArAf@h@r@r@\\^VVXXVV`@^l@n@nFtFjAjA`@b@^^\\\\bAdAh@j@x@x@j@j@JJnGtGfAhAZXd@f@zC~CvAxAlDnDl@n@PPNNB@t@v@PPBB^^XZLL^`@`@`@NNb@b@RRd@h@\\ZfAjAp@p@t@r@rAvAHHPRr@p@hBjBVXXZp@n@v@x@jAjARR`AbATT^`@tAvAZZDDh@h@n@n@f@h@r@r@@@PPj@l@bAbAx@z@DDb@b@`@`@nApA`A~@NL\\\\xCzCRTFFp@r@pCvCBBlCnCxB|BPPPPPR`@`@`@`@RRPRPP`@b@RP^`@RPRRNPPPNPRRr@p@RT`@`@PPd@d@NNNPNNv@v@RTNL|C`D@?NPPPRRx@z@pApAPRPPNNPRVTLN^^RRNPRPNPPNRRNPRTt@r@LLPRPPPPRRNPPNNNPRPPPRTTLLd@d@hBjBLLRRNPRRNNp@r@RRPPRR^`@RRPPPPRRPPvAxAp@p@Z\\ZZvAxA^\\NP`@b@bCbCl@n@f@f@bJfJpDvDvAvAPPb@d@jBjBZ\\|A|A|@`ANNtBtBd@f@~MhNpNxNvDxDhFlFpCrCdDhDFFTRnBnBrAtATVHJj@j@rCtChClCnDnDlAnAJJLNPPTV~B|BtAvA`CbCl@l@fAhAlBlBrY~Y|B~Bt@v@p@p@ZZt@v@dDfD|@|@^`@t@t@RRVX|@|@`AdALL`@^LN\\\\TTNNVXxF|F|LdMfCjCjAjAr@t@p@p@x@z@VVr@r@b@b@`@`@RPZZx@z@^`@VX`A`A|@|@NNPRRPLNb@b@HHd@d@h@h@b@f@~@~@ZZ\\^NNTTLL`@`@BBRRv@v@LNt@v@FFVTx@z@r@t@VVNNLLr@r@d@f@~A`BvAxA|A~A\\Z\\^b@b@RRTTv@t@HJb@^LLDBb@^VTfAz@XTp@f@b@X`Al@TN`@V|@f@XP`Ad@z@`@x@^jAf@`@RhAd@x@^h@Vt@ZFBd@Tr@ZVJl@V`Ab@t@\\|@`@nBz@`CdAPHbCdAvDdBvD`BlBx@dBv@~Ar@dAd@xB`AxEtBdEhBdH|C|GzCz@^d@Tb@R\\Nz@^~Ar@VJNFNF~@`@z@`@TJ\\NdAd@lAh@ZLXLRJl@Vb@RVJRJPHpItDh@TB@zAp@dAd@XLjElBXLFBnClApAj@nBz@xAn@lAh@`EfBxAp@x@^^NPHfCfAlAj@@?\\NB@`Ab@XLnClAfDxAx@\\tCpA`EfB`CdAfAf@dCfAfCfAvAn@pClAdEhBdEjBfEjBlAh@^P@?pKxE`@P`@PXLZLXN`A`@B@`Br@DB|Ap@HDzBbApAj@RHrAl@NF`FxBHDVJjDzADBd@RZN^NbAd@@?hBx@|@^B@`@RfChAXLrClA~BdA`@PZLNHb@PxCrAtAl@j@Vz@^JDNHnBz@bAb@hAf@TJjAf@^P\\LRHt@\\F@fAh@fAf@fAd@FBh@Tf@TXLb@RRHVJvB~@f@T`@PFBf@T~@b@HDD@dBt@rAl@PHh@Rr@\\RJ\\Nx@\\HDd@RbBt@HDp@ZfAd@XL`@PXLl@VTJt@\\b@PbAd@"
+                             },
+                             "start_location" : {
+                                "lat" : 45.506845,
+                                "lng" : -122.6758319
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "0.5 mi",
+                                "value" : 736
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 29
+                             },
+                             "end_location" : {
+                                "lat" : 44.9997935,
+                                "lng" : -123.0022989
+                             },
+                             "html_instructions" : "Take exit \u003cb\u003e260A\u003c/b\u003e for \u003cb\u003eOregon 99E Business E\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eSalem Pkwy\u003c/b\u003e",
+                             "maneuver" : "ramp-right",
+                             "polyline" : {
+                                "points" : "s`uqGzyumVDV@?FDLHd@VJF`@VFB@@FBVNLHDDj@\\x@d@HDHDHFHDTLVNHF|@h@ZNZRr@d@p@f@`@\\^ZLLPP?@RTVZRVPVV`@?@@@LPP\\d@z@f@`A\\t@Vf@d@~@`@r@HNBDBJ"
+                             },
+                             "start_location" : {
+                                "lat" : 45.0050636,
+                                "lng" : -122.9969418
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "4.2 mi",
+                                "value" : 6833
+                             },
+                             "duration" : {
+                                "text" : "7 mins",
+                                "value" : 439
+                             },
+                             "end_location" : {
+                                "lat" : 44.9472669,
+                                "lng" : -123.0370935
+                             },
+                             "html_instructions" : "Continue onto \u003cb\u003eOR-99EBUS S\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eDr MLK Jr Pkwy\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinue to follow OR-99EBUS S\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003ePass by Starbucks (on the left in 3 mi)\u003c/div\u003e",
+                             "polyline" : {
+                                "points" : "u_tqGj{vmVX`@HLNRTX^d@v@x@JJl@f@d@Xj@^|@f@^NZLb@N|@TRDVDd@HXDRBVBL@X@`AFtAH@?H@jAFxAHbBJH?rAFbBJ\\BJ?nCNz@FpAHX@F@@?|BLbAJj@Fl@Jz@Nj@Jh@Nj@NTFTHf@NVJ|@\\z@^t@\\ZPrAl@RJ`@PHD`@RzCvAjAh@^Pl@ZhBz@lAj@f@Tj@VlB|@r@ZRJn@\\XNPJl@\\`Al@LHx@h@PNB@^Xr@h@f@`@@?\\Z~@x@XVf@f@`A`AJJl@p@HJf@j@NRx@`Az@lAx@jAd@r@V^\\j@l@fAdAfBt@pA~KzRbBtC`AdBf@|@FJVd@LVTb@LVDLJZVn@DHL^HVFXHZHZFZH^DZFZF^DXF\\D\\Lx@L|@FZNz@DXPv@J\\FVDLBF@DJVLXLXJTNTNVPRLRPPRRNNPNPLTLTLLHTLh@TB@`@PB@h@RTHh@Td@Pl@VNHTJh@ZNJBBLHRRVZPTDFDHHLFHJTDLLXl@jBh@nB^nAHVHXJXJXJXHVJTJVLXJVt@fBR`@DHBFDHDHFFFHFFHHHFJFD@@@JDHBF@HBH?LBD??@LFzCJj@@P@`ADbCBdE?hA@hC?lBCfE@bF@fE?vC?R@PDNFd@PjDtAlDvAjAd@|An@hDrAjDvAhDnAf@TRFVFH@H@P?PATAJ?L?NBLBb@Nn@VvBx@nAf@n@V`Bn@~B~@"
+                             },
+                             "start_location" : {
+                                "lat" : 44.9997935,
+                                "lng" : -123.0022989
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "0.3 mi",
+                                "value" : 416
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 64
+                             },
+                             "end_location" : {
+                                "lat" : 44.9437393,
+                                "lng" : -123.038819
+                             },
+                             "html_instructions" : "Continue straight onto \u003cb\u003eCommercial St NE\u003c/b\u003e",
+                             "maneuver" : "straight",
+                             "polyline" : {
+                                "points" : "mwiqGxt}mV~@\\^Dd@R~B|@n@VhAd@v@Z\\NRH`@PFDf@RvAj@VJTJ"
+                             },
+                             "start_location" : {
+                                "lat" : 44.9472669,
+                                "lng" : -123.0370935
+                             },
+                             "travel_mode" : "DRIVING"
+                          },
+                          {
+                             "distance" : {
+                                "text" : "0.2 mi",
+                                "value" : 307
+                             },
+                             "duration" : {
+                                "text" : "1 min",
+                                "value" : 44
+                             },
+                             "end_location" : {
+                                "lat" : 44.9428043,
+                                "lng" : -123.0351435
+                             },
+                             "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eCenter St NE\u003c/b\u003e",
+                             "maneuver" : "turn-left",
+                             "polyline" : {
+                                "points" : "kaiqGr_~mVHc@DSFa@?EF[Ha@@G@KDU@E@IZmBHc@~@cGHe@RkA"
+                             },
+                             "start_location" : {
+                                "lat" : 44.9437393,
+                                "lng" : -123.038819
+                             },
+                             "travel_mode" : "DRIVING"
+                          }
+                       ],
+                       "traffic_speed_entry" : [],
+                       "via_waypoint" : []
+                    }
+                 ],
+                 "overview_polyline" : {
+                    "points" : "euxtGvrwkVcGoCjBoKbBcKxFfC`@R|HtDrCfAn@^VoAV[JGZCt@^|ExBlA\\\\FpADzCSfB_@tA]rFeBvC}@`F}AbDcARFtAc@|@YvBk@fAa@|@QdBOrBGlB?lMPbONfENbBVvBd@|CjA|BjAbBhAhA`AvBzBfAtAnDjFpAdBvAzA~AdAh@Tv@VpAP|AB`CK|F_@rBKjCG`FAlQC|FGxAIvBWvEeArF}AjFuAbBQ^@p@DzAd@hAt@bAnA|@jBb@zAZzBFxBIfCOfBkApL_@`FK`GDxD^|F^zBZhAl@vAj@|@zB`ClCdChApAz@hA`BpC`BzCtDdH`CvFjA|CzAzDfCxFnNxY|LjWzOt]|FlM|@nB|@dCj@tB^xBRhBJtB?`FIrEMzHBtDJvBZ~C`@~BjAfE~AjD~@vAfAnAnB~AhC|A~C`BhCrAbDjBdCpBbAjA~A`CtAvCv@`Ct@xCl@zDzA|Ln@dDn@nBr@~AfAhBbAlAbFjErJxHrChBvBfAjCdAjA\\bC`@dBLrGBz\\G|PCxd@Glj@KjJAjCApDAf@BbC?`IAlE?~DHzCLfEXtEb@pC^zCf@hEz@nEhAb[hJn[jJrYhIpl@|Pjg@fO~`@vLlF~AdMnDnMzD|GrBr\\`Kd]`KbYjIfK|CdElAjEbApGnAlLvAdHb@tDF|HDpJ?fJAnVAl`CCnS?ts@Al~@C~H?dE?xCFlBNnC^jB`@fBf@vDzAnBdAnAv@jF~D`GrE`FzDxU~QjIvGbv@pl@vbAfw@rh@ja@veAjy@pe@|^rKrH`IbFvVrOl`@lVthApr@vLpHxHdFtHpF`F|DxEzDfFrEpKfKtf@ng@pt@vu@vdBtfB`tAtuAlf@dg@rRxR`YrYh[x[~eAfgAlkBdmBfx@dy@pg@fh@p]~]|ShTrBnBhCtBpDdCnC`BrM`GtIvDlgAbf@~t@b\\d_DhuA`_Btr@~BbAxAn@bAd@DV@?TNzAz@dDnBnDrBbD~B~@|@pA`Bf@v@fF|Jj@`A|BlCjClB|Av@~@\\nCj@rANfMr@hOx@`DPnBRhBZvCr@rCbAbItD`QdIdFbCzCfBxEjDxBlBbDfDzBlCrDlFtXbf@bAlBv@pBd@zAd@rBdAdHn@hD\\jAh@pA|@vAbAhAnAx@vD`BlChArAv@jAnA\\h@lAhD|ApF~AdErAzCZd@f@`@\\Lh@HD@LFzCJ|@BdEHfOAjWBd@Ft@XbObGfPpG~@RdAC\\Bp@RfHpC`FnB~@\\^DdDpAxB|@jCfA~CpATJHc@Lu@RkAzBmNRkA"
+                 },
+                 "summary" : "I-5 S",
+                 "warnings" : [],
+                 "waypoint_order" : []
+              }
+           ],
+           "status" : "OK"
+        }
+  recorded_at: Sun, 13 Aug 2023 00:46:01 GMT
+recorded_with: VCR 6.2.0
