@@ -23,42 +23,74 @@ RSpec.describe Ride, type: :model do
   end
   
   describe "callbacks" do
-    describe "after create" do
-      let!(:ride) { build(:ride) }
+    describe "after commit" do 
+      describe "on create" do
+        let!(:ride) { build(:ride) }
 
-      it "queues calculations" do
-        ActiveJob::Base.queue_adapter = :test
-        expect {
-          ride.save
-        }.to have_enqueued_job(RideCalculationsJob).with(ride)
-      end
-    end
+        it "queues calculations" do
+          ActiveJob::Base.queue_adapter = :test
+          expect {
+            ride.save
+          }.to have_enqueued_job(RideCalculationsJob).with(ride)
+        end
 
-    describe "after update" do
-      let!(:ride) { create(:ride) }
-
-      it "queues calculations after start address changes" do
-        ActiveJob::Base.queue_adapter = :test
-        ride.start_address = "new address"
-        expect {
-          ride.save
-        }.to have_enqueued_job(RideCalculationsJob).with(ride)
+        it "creates commutes" do
+          ActiveJob::Base.queue_adapter = :test
+          expect {
+            ride.save
+          }.to have_enqueued_job(CommuteCreationJob).with(ride)
+        end
       end
 
-      it "queues calculations after destination address changes" do
-        ActiveJob::Base.queue_adapter = :test
-        ride.destination_address = "new address"
-        expect {
-          ride.save
-        }.to have_enqueued_job(RideCalculationsJob).with(ride)
-      end
+      describe "on update" do
+        let!(:ride) { create(:ride) }
 
-      it "does not queue calculations when non-address attributes change" do
-        ActiveJob::Base.queue_adapter = :test
-        ride.attributes = { distance: 1, duration: 2, earnings: 3 }
-        expect {
-          ride.save
-        }.to_not have_enqueued_job(RideCalculationsJob).with(ride)
+        describe "address changes" do
+          it "queues calculations after start address changes" do
+            ActiveJob::Base.queue_adapter = :test
+            ride.start_address = "new address"
+            expect {
+              ride.save
+            }.to have_enqueued_job(RideCalculationsJob).with(ride)
+          end
+
+          it "queues calculations after destination address changes" do
+            ActiveJob::Base.queue_adapter = :test
+            ride.destination_address = "new address"
+            expect {
+              ride.save
+            }.to have_enqueued_job(RideCalculationsJob).with(ride)
+          end
+
+          it "rebuilds commutes after start address changes" do
+            ActiveJob::Base.queue_adapter = :test
+            ride.start_address = "new address"
+
+            expect {
+              ride.save
+            }.to have_enqueued_job(CommuteCreationJob).with(ride)
+          end
+
+          it "rebuilds commutes after destination address changes" do
+            ActiveJob::Base.queue_adapter = :test
+            ride.destination_address = "new address"
+            
+            expect {
+              ride.save
+            }.to have_enqueued_job(CommuteCreationJob).with(ride)
+          end
+        end
+
+        describe "when non-address attributes change" do
+          it "no jobs should be queued" do
+            ActiveJob::Base.queue_adapter = :test
+            ride.attributes = { distance: 1, duration: 2, earnings: 3 }
+            
+            expect {
+              ride.save
+            }.to_not have_enqueued_job
+          end
+        end
       end
     end
   end
