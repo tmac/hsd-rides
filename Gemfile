@@ -13,7 +13,13 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+# gem "jbuilder"
+
+# For JSON API
+gem 'active_model_serializers', "~> 0.10.13"
+
+# API pagination
+gem 'will_paginate', '~> 3.3.0'
 
 # Wrapper around the google directions API
 gem 'google-maps'
@@ -40,6 +46,9 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'factory_bot_rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
