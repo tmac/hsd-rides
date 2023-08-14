@@ -1,9 +1,7 @@
 class Ride < ApplicationRecord
+  include Commutable
+  
   after_commit :queue_calculations, on: [:create, :update], if: :perform_calculations?
-  after_commit :create_commutes,    on: :create
-  after_commit :rebuild_commutes,   on: :update, if: :previous_address_changes?
-
-  has_many :commutes, dependent: :delete_all
 
   scope :with_score_for_driver, -> (driver) { 
     joins(:commutes)
@@ -19,15 +17,6 @@ class Ride < ApplicationRecord
 
   def queue_calculations
     RideCalculationsJob.perform_later(self)
-  end
-
-  def create_commutes
-    CommuteCreationJob.perform_later(self)
-  end
-
-  def rebuild_commutes
-    self.commutes.destroy_all
-    CommuteCreationJob.perform_later(self)
   end
 
   # Helpers

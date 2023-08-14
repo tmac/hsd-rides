@@ -1,11 +1,9 @@
 class Driver < ApplicationRecord
-  after_commit :create_commutes, on: :create
-
-  has_many :commutes, dependent: :delete_all
+  include Commutable
 
   private
 
-  def create_commutes
-    CommuteCreationJob.perform_later(self)
+  def previous_address_changes?
+    self.previous_changes.keys.intersection(['home_address']).any?
   end
 end
