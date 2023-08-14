@@ -8,7 +8,7 @@ module Commutable
     after_commit :rebuild_commutes,   on: :update, if: :previous_address_changes?
 
     has_many :commutes, dependent: :delete_all
-
+    
     private
 
     def create_commutes
