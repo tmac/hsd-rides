@@ -4,9 +4,9 @@ class Api::V1::RidesController < ApplicationController
 
   def index
     if @rides
-      render json: { rides: @rides, total_pages: @rides.total_pages, current_page: @rides.current_page }
+      render json: { status: :succeeded, rides: @rides, total_pages: @rides.total_pages, current_page: @rides.current_page }, status: :ok
     else
-      render json: @rides.errors, status: :bad_request
+      render json: { status: :failed, message: "no driver or rides found" }, status: :bad_request
     end
   end
 
@@ -17,7 +17,9 @@ class Api::V1::RidesController < ApplicationController
   end
 
   def set_rides
-    @rides = Ride.with_score_for_driver(@driver).paginate(page: params[:page] || 1, per_page: 5)
+    if @driver.present?
+      @rides = Ride.with_score_for_driver(@driver).paginate(page: params[:page] || 1, per_page: 5)
+    end
   end
 
 end
