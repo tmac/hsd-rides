@@ -10,11 +10,11 @@ class Calculator::Earnings
     private 
 
     def distance_bonus
-      bonus_miles * 1.50 # 382 bonus = $573
+      bonus_miles * 1.50
     end
 
     def duration_bonus
-      bonus_minutes * 0.70 # 352 bonus = $246.4
+      bonus_minutes * 0.70
     end
 
     def bonus_miles
