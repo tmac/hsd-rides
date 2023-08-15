@@ -2,7 +2,7 @@
 # README
 * Notes, issues, random thoughts ... overthinking 
   - No authentication or authorization
-  - Jobs are being run inline during seeding (https://github.com/rails/rails/issues/35812) and otherwise would run on the default ActiveJob in memory queue. This would of course have to be changed to Sidekiq, Resque etc...
+  - Jobs are being run inline during seeding (https://github.com/rails/rails/issues/35812) and otherwise would run on the default ActiveJob in memory queue. This would of course have to be changed to Sidekiq, Resque etc... Also, in a real production setup with more than 1 worker I think there's a possibility of a race condition that would have to be more carefully thought through, should be OK for this example though.
   - Curser pagination would likely be a better solution but it was causing pain, had to move on.   
   - All distance and duration info gathered from Google Directions API is stored in the DB and not auto refreshed. I think some scheduled process to periodically update those based on `Ride#calculations_updated_at` and `Commute#calculations_updated_at` would be necessary. They will update if either the start, destination or driver home addresses change but obviously not for external things like road closures, construction etc... Do they need to be near realtime? Refreshed every minumte? hour? day? week?
   - Feel like I'm missing something here? Don't want to be storing every possible driver / ride combination in the country. Some way to scope those combinations by city or region or perhaps with a radial search. Or maybe it's enough that rides would simply fall away as pickup times pass.  ... not sure exactly
