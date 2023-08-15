@@ -26,7 +26,7 @@ RSpec.describe Calculator::Score do
       let(:commute)    { Commute.create(duration: 3) }
       let(:ride)       { Ride.create(duration: 12, earnings: 12) }
 
-      it "should eq $40.00 per hour" do 
+      it "should eq $48.00 per hour" do 
         expect(calculator.calculate(commute, ride)).to eq(48)
       end
     end
