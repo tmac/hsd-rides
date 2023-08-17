@@ -37,29 +37,34 @@ escape the ? (\\?) on zsh
 
 #### Successful response:  
 ```
-{"status":"succeeded", "rides":[
 {
-  "id": 3,
-  "start_address": "4329 Howe Street, Oakland CA 94611",
-  "destination_address": "1532 Milvia Street, Berkeley CA 94709",
-  "distance": "5.0",
-  "duration": "17.0",
-  "earnings": "13.4",
-  "calculations_updated_at": "2023-08-12 20:49:52 UTC",
-  "created_at": "2023-08-12 20:49:51 UTC",
-  "updated_at": "2023-08-12 20:49:52 UTC",
-  "score": "17.4",
-  "cummute_duration": "29.0",
-  "cummute_distance": "21.0"
-},
-...,
-...
-],"total_pages":4,"current_page":1}
+  "rides": [
+    {
+      "id": 3,
+      "start_address": "4329 Howe Street, Oakland CA 94611",
+      "destination_address": "1532 Milvia Street, Berkeley CA 94709",
+      "distance": "5.0",
+      "duration": "17.0",
+      "earnings": "13.4",
+      "score": "13.2",
+      "commute_distance": "32.0",
+      "commute_duration": "43.0",
+      "calculations_updated_at": "2023-08-14T23:21:16.978Z",
+      "created_at": "2023-08-14T23:21:16.506Z",
+      "updated_at": "2023-08-14T23:21:16.978Z"
+    }
+  ],
+  "meta": {
+    "status": "succeeded",
+    "total_pages": 20,
+    "current_page": 20
+  }
+}
 
 ```
 
 #### Failed response:  
 ```
-{ "status":"failed","message":"no driver or rides found" }
+{"meta": { "status": "failed", "message": "no driver or rides found" }}
 
 ```
