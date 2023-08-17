@@ -4,9 +4,13 @@ class Api::V1::RidesController < ApplicationController
 
   def index
     if @rides
-      render json: { status: :succeeded, rides: @rides, total_pages: @rides.total_pages, current_page: @rides.current_page }, status: :ok
+      render json: @rides, each_serializer: Api::V1::RideSerializer, 
+                           driver:          @driver,
+                           meta:            { status:       :succeeded,
+                                              total_pages:  @rides.total_pages, 
+                                              current_page: @rides.current_page }
     else
-      render json: { status: :failed, message: "no driver or rides found" }, status: :bad_request
+      render json: { meta: { status: :failed, message: "no driver or rides found" } }, status: :bad_request
     end
   end
 
@@ -18,7 +22,7 @@ class Api::V1::RidesController < ApplicationController
 
   def set_rides
     if @driver.present?
-      @rides = Ride.with_score_for_driver(@driver).paginate(page: params[:page] || 1, per_page: 5)
+      @rides = @driver.rides.paginate(page: params[:page] || 1, per_page: params[:per_page] || 5)
     end
   end
 

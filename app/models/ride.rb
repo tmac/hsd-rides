@@ -1,16 +1,10 @@
 class Ride < ApplicationRecord
   include Commutable
-  
-  after_commit :queue_calculations, on: [:create, :update], if: :perform_calculations?
 
-  scope :with_score_for_driver, -> (driver) { 
-    joins(:commutes)
-    .select("rides.*, commutes.ride_score AS score, commutes.duration AS cummute_duration, 
-             commutes.distance AS cummute_distance")
-    .where('commutes.driver_id': driver.id) 
-    .order(ride_score: :desc)
-  }
+  after_commit :queue_calculations, on: [:create, :update], if: :perform_calculations?
   
+  has_many :drivers, through: :commutes
+
   private
 
   # Callbacks

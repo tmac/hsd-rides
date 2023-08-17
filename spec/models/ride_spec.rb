@@ -11,13 +11,11 @@ RSpec.describe Ride, type: :model do
       let!(:commute2) { create(:commute, ride: ride2, driver: driver1) }
 
       it "returns rides for driver" do
-        rides = Ride.with_score_for_driver(driver1)
-        expect(rides).to include(ride1, ride2)
+        expect(driver1.rides).to include(ride1, ride2)
       end
 
       it "does not return rides for driver" do
-        rides = Ride.with_score_for_driver(driver2)
-        expect(rides).to_not include(ride1, ride2)
+        expect(driver2.rides).to_not include(ride1, ride2)
       end
     end
   end
