@@ -26,14 +26,12 @@ RSpec.describe Ride, type: :model do
         let!(:ride) { build(:ride) }
 
         it "queues calculations" do
-          ActiveJob::Base.queue_adapter = :test
           expect {
             ride.save
           }.to have_enqueued_job(RideCalculationsJob).with(ride)
         end
 
         it "creates commutes" do
-          ActiveJob::Base.queue_adapter = :test
           expect {
             ride.save
           }.to have_enqueued_job(CommuteCreationJob).with(ride)
@@ -45,7 +43,6 @@ RSpec.describe Ride, type: :model do
 
         describe "address changes" do
           it "queues calculations after start address changes" do
-            ActiveJob::Base.queue_adapter = :test
             ride.start_address = "new address"
             expect {
               ride.save
@@ -53,7 +50,6 @@ RSpec.describe Ride, type: :model do
           end
 
           it "queues calculations after destination address changes" do
-            ActiveJob::Base.queue_adapter = :test
             ride.destination_address = "new address"
             expect {
               ride.save
@@ -61,7 +57,6 @@ RSpec.describe Ride, type: :model do
           end
 
           it "rebuilds commutes after start address changes" do
-            ActiveJob::Base.queue_adapter = :test
             ride.start_address = "new address"
 
             expect {
@@ -70,7 +65,6 @@ RSpec.describe Ride, type: :model do
           end
 
           it "rebuilds commutes after destination address changes" do
-            ActiveJob::Base.queue_adapter = :test
             ride.destination_address = "new address"
             
             expect {
@@ -81,7 +75,6 @@ RSpec.describe Ride, type: :model do
 
         describe "when non-address attributes change" do
           it "no jobs should be queued" do
-            ActiveJob::Base.queue_adapter = :test
             ride.attributes = { distance: 1, duration: 2, earnings: 3 }
             
             expect {

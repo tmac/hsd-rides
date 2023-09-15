@@ -7,7 +7,7 @@ RSpec.describe Driver, type: :model do
         let!(:driver) { build(:driver) }
 
         it "creates commutes" do
-          ActiveJob::Base.queue_adapter = :test
+          
           expect {
             driver.save
           }.to have_enqueued_job(CommuteCreationJob).with(driver)
@@ -19,7 +19,7 @@ RSpec.describe Driver, type: :model do
 
         describe "address changes" do
           it "queues the cummute creation job" do
-            ActiveJob::Base.queue_adapter = :test
+            
             driver.home_address = "new address"
 
             expect {
@@ -30,7 +30,7 @@ RSpec.describe Driver, type: :model do
 
         describe "when non-address attributes change" do
           it "no jobs should be queued" do
-            ActiveJob::Base.queue_adapter = :test
+            
             driver.updated_at = DateTime.current
             
             expect {
